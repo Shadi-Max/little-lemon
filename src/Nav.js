@@ -1,21 +1,24 @@
 import React from 'react';
+import './styles.css';
 
 function Nav() {
     return (
-        <nav>
-            <img src="little-lemon\public\images\logo.svg" alt="logo" />
+        <nav className='navbar'>
+            <div className='logo'>
+                <img src="images\logo.svg" alt="logo" width="250"/>
+            </div>
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    <a href="/">HOME</a>
                 </li>
                 <li>
-                    <a href="/about">Menu</a>
+                    <a href="/about">MENU</a>
                 </li>
                 <li>
-                    <a href="/contact">Reservation</a>
+                    <a href="/contact">RESERVATION</a>
                 </li>
                 <li>
-                    <a href="/contact">About</a>
+                    <a href="/contact">ABOUT</a>
                 </li>
             </ul>
         </nav>
