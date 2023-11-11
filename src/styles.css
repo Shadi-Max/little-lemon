@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+
 *{
 	margin:0;
 	padding:0;
@@ -11,12 +12,22 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
+h1 {
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 18pt;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
 .logo {
     margin-right: 20px;
 }
 
 .navbar {
-    background-color: #33333357;
+    background-color:#3333336e;
     display: flex;
     padding: 10px;
     justify-content: space-between;
@@ -25,7 +36,13 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
+    transition: background-color 0.3s ease;
 }
+
+.navbar.scrolled {
+    background-color: #000000b7;
+    backdrop-filter: blur(10px);
+  }
 
 .navbar ul {
     list-style: none;
@@ -39,7 +56,7 @@ body {
 }
 
 .navbar a {
-    padding: 10px;
+    padding: 3px 10px;
     border-radius: 16px;
     text-decoration: none;
     color: #ffffff;
@@ -48,11 +65,49 @@ body {
 
 
 .navbar a:hover {
-    background-color: #f4ce14;
-    color: #fff;
+    background-color: #ee9972;
+    color: #fbdabb;
     text-decoration: none;
     transition: all 0.3s ease;
 }
+
+.menu.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.mobile-menu-icon {
+    width: 0px;
+    cursor: pointer;
+    display: none;
+    color: #000000;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff; /* Background color for the dropdown */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+    display: none; /* Hide the dropdown by default */
+    z-index: 1000; /* Adjust the z-index as needed */
+}
+
+.menu.active .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Add a border between items */
+}
+
+.dropdown li:last-child {
+    border-bottom: none;
+}
+
+/*Main*/
 
 .container {
     max-width: 960px;
@@ -70,19 +125,185 @@ li {
     list-style: none;
 }
 
+/*Hero*/
+
 .hero {
-    background-image: url('hero-image.png');
+    background-image: url('restaurant.jpg');
     background-size: 100%;
+    background-size: cover;
     background-position: center;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
-    padding: 200px 0;
+    padding: 100px 20%;
+}
+
+.hero button {
+    margin-top: 80px;
+}
+
+.hero p {
+    margin-top: 20px;
+}
+
+/*Menu*/
+
+.menu {
+    padding: 20px 30px;
+    background-image: url('menu-background.png');
+    background-size: cover;
+}
+
+.menu-col {
+    background-color: #fff;
+    display: grid;
+    text-align: center;
+    max-width: 300px;
+    margin: 10px;
+    padding: 20px 50px;
+    border-radius: 16px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-col img {
+    max-width: 200px;
+    min-width: 50px;
+    width: 200px;
+    height: 120px;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.description{
+    font-size: 12pt;
+    color: #8d8b8b;
+    min-height: 100px;
+}
+
+.price {
+    color: #f4ce14;
+    font-size: 14pt;
+    padding-bottom: 10px;
+}
+
+button {
+    background-color: #495e57;
+    color: #ffffff;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 16px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+    background-color: #f4ce14;
+    color: #fff;
+    border-color: #fff;
+}
+
+/*Reservation*/
+
+.reservation {
+    background-image: url('res-background.png');
+    background-size: cover;
+    background-color: #fff;
+    display: grid;
+    text-align: center;
+    padding: 20px 50px;
+}
+
+.reservation h2 {
+    color: #ffffff;
+}
+
+form {
+    background-color: #495e5780;
+    color: #fff;
+    display: grid;
+    text-align: center;
+    max-width: 300px;
+    margin: 10px;
+    padding: 30px 50px;
+    border-radius: 16px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 16px;
+    border: none;
+    color: #495e57;
+    background-color: #ffffff3d;
+}
+
+.sec-btn {
+    background-color: #ee9972;
+    color: #ffffff;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 50px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 16px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.sec-btn:hover {
+    background-color: #495e57;
+    color: #fff;
+    border-color: #fff;
+}
+
+.about {
+    display: flexbox;
+    flex-wrap: wrap;
+    background-image: url('about-background.png') ;
+    background-size: cover;
+    padding: 20px 30px;
+}
+
+.about-col {
+    flex-wrap: wrap;
+    flex: 1;
+    padding: 20px;
+    margin-bottom: 10p;
+    box-sizing: border-box;
+}
+
+.about h2 {
+    flex: 1;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.about img {
+    flex: 1;
+    max-width: 100%;
+    min-width: 250px;
+    width: 400px;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); ;
 }
 
 /*Footer*/
 
 
-.container{
+footer .container{
 	max-width: 1170px;
 	margin: auto;
 }
@@ -180,4 +401,26 @@ ul{
     width: 100%;
 }
 }
+
+@media (max-width: 600px) {
+    .about {
+        flex-direction: column;
+    }
+    .about img {
+        order: -1; /* Move the image to the top on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Hide desktop menu on small screens */
+    }
+
+    .mobile-menu-icon {
+        display: block; /* Show mobile menu icon on small screens */
+        color: #000000;
+        padding: 0 10px;
+    }
+}
+
 
