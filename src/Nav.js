@@ -27,6 +27,7 @@ function Nav() {
         };
 
         // Initial setup
+
         handleResize();
 
         window.addEventListener('scroll', handleScroll);
@@ -44,11 +45,10 @@ function Nav() {
     return (
         <nav className={navbarClass}>
             <div className='logo'>
-                <img src="images/logo.png" alt="logo" width="250"/>
+                <img src="images/logo.png" alt="logo"/>
             </div>
             {isMobile ? (
                 <div className={menuClass} onClick={() => setMenuActive(!menuActive)}>
-                {/* Add your mobile menu icon (e.g., hamburger icon) here */}
                 <div className='mobile-menu-icon'>
                     <img src={MenuIcon} alt="menu-icon" width="30" />
                 </div>
@@ -57,13 +57,13 @@ function Nav() {
                             <a href="/">HOME</a>
                         </li>
                         <li>
-                            <a href="/about">MENU</a>
+                            <a href="/menu">MENU</a>
                         </li>
                         <li>
-                            <a href="/contact">RESERVATION</a>
+                        <a href="/reservation">RESERVATION</a>
                         </li>
                         <li>
-                            <a href="/contact">ABOUT</a>
+                            <a href="/contact">CONTACT</a>
                         </li>
                     </ul>
                 </div>
@@ -73,13 +73,13 @@ function Nav() {
                     <a href="/">HOME</a>
                 </li>
                 <li>
-                    <a href="/about">MENU</a>
+                    <a href="/menu">MENU</a>
                 </li>
                 <li>
-                    <a href="/contact">RESERVATION</a>
+                    <a href="/reservation">RESERVATION</a>
                 </li>
                 <li>
-                    <a href="/contact">ABOUT</a>
+                    <a href="/contact">CONTACT</a>
                 </li>
             </ul>
             )}

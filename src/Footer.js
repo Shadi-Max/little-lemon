@@ -27,13 +27,18 @@ function Footer () {
                     </div>
                     <div className='footer-col'>
                         <h4>Follow Us</h4>
-                        <div class="social-links">
-  	 				        <a href="#"><i class="fab fa-facebook-f"></i></a>
-  	 				        <a href="#"><i class="fab fa-twitter"></i></a>
-  	 				        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <div className="social-links">
+  	 				        <a href="#"><i className="fab fa-facebook-f"></i></a>
+  	 				        <a href="#"><i className="fab fa-twitter"></i></a>
+  	 				        <a href="#"><i className="fab fa-instagram"></i></a>
   	 			        </div>
                     </div>
                 </div>
+            </div>
+            <hr></hr>
+            <div className='copyright'>
+                <p>&copy; <span id="copyrightYear"></span> Little Lemon restaurant. All rights reserved.</p>
+                <p> Developed by Shadi max </p>
             </div>
         </footer>
     );
