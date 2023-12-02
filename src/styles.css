@@ -385,7 +385,9 @@ select option {
 
 .menu-container {
     text-align: center;
+    background-image: url('hero-background.png');
 }
+
 .menu-image {
     max-width: 100%;
     max-height: 100%;
