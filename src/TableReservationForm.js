@@ -46,19 +46,19 @@ const TableReservationForm = ({ bookingFormData }) => {
             <fieldset>
               <h3>Table Reservation Form</h3>
               <div className="Field">
-                <label htmlFor="name">Name <sup>*</sup></label>
+                <label htmlFor="name">Name*</label>
                 <Field type="text" id="name" name="name" aria-describedby="nameError" />
                 <ErrorMessage name="name" component="div" className="error" />
               </div>
 
               <div className="Field">
-                <label htmlFor="email">Email <sup>*</sup></label>
+                <label htmlFor="email">Email*</label>
                 <Field type="email" id="email" name="email" aria-describedby="emailError"/>
                 <ErrorMessage name="email" component="div" className="error" />
               </div>
 
               <div className="Field">
-                <label htmlFor="numOfGuests">Guests <sup>*</sup></label>
+                <label htmlFor="numOfGuests">Guests*<sup>*</sup></label>
                 <Field as="select" id="numOfGuests" name="numOfGuests" aria-label="Number of Guests">
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -74,13 +74,13 @@ const TableReservationForm = ({ bookingFormData }) => {
               </div>
 
               <div className="Field">
-                <label htmlFor="date">Date <sup>*</sup></label>
+                <label htmlFor="date">Date*</label>
                 <Field type="date" id="date" name="date" aria-describedby="dateError" />
                 <ErrorMessage name="date" component="div" className="error" />
               </div>
 
               <div className="Field">
-                <label htmlFor="time">Time <sup>*</sup></label>
+                <label htmlFor="time">Time*</label>
                 <Field as="select" id="time" name="time" aria-label="Reservation Time">
                   <option value="16">16:00</option>
                   <option value="16:30">16:30</option>
