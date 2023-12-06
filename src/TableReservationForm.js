@@ -58,7 +58,7 @@ const TableReservationForm = ({ bookingFormData }) => {
               </div>
 
               <div className="Field">
-                <label htmlFor="numOfGuests">Guests*<sup>*</sup></label>
+                <label htmlFor="numOfGuests">Guests*</label>
                 <Field as="select" id="numOfGuests" name="numOfGuests" aria-label="Number of Guests">
                   <option value="1">1</option>
                   <option value="2">2</option>
