@@ -11,10 +11,10 @@ function Footer () {
                     <div className='footer-col'>
                         <h4>Navigation</h4>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Menu</a></li>
-                            <li><a href="#">Reservation</a></li>
-                            <li><a href="#">About</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/menu">Menu</a></li>
+                            <li><a href="/reservation">Reservation</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
                         </ul>
                     </div>
                     <div className='footer-col'>
@@ -28,9 +28,9 @@ function Footer () {
                     <div className='footer-col'>
                         <h4>Follow Us</h4>
                         <div className="social-links">
-  	 				        <a href="#"><i className="fab fa-facebook-f"></i></a>
-  	 				        <a href="#"><i className="fab fa-twitter"></i></a>
-  	 				        <a href="#"><i className="fab fa-instagram"></i></a>
+  	 				        <a href="/"><i className="fab fa-facebook-f"></i></a>
+  	 				        <a href="/"><i className="fab fa-twitter"></i></a>
+  	 				        <a href="/"><i className="fab fa-instagram"></i></a>
   	 			        </div>
                     </div>
                 </div>

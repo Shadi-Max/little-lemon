@@ -337,13 +337,7 @@ input {
     background-color: #ffffff3d;
 }
 
-sup {
-    color: rgb(214, 105, 105);
-    top: -2px;
-    font-size: 95%;
-    line-height: 0;
-    vertical-align: baseline;
-  }
+
 
 .Field {
     position: relative;

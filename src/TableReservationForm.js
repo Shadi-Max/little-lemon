@@ -101,7 +101,7 @@ const TableReservationForm = ({ bookingFormData }) => {
               </div>
 
               <div className="Field">
-                <label htmlFor="occasion">Occasion <sup>*</sup></label>
+                <label htmlFor="occasion">Occasion*</label>
                 <Field as="select" id="occasion" name="occasion" aria-label="Reservation Occasion">
                   <option value="Birthday">Birthday</option>
                   <option value="Anniversary">Anniversary</option>
