@@ -21,7 +21,7 @@ const Main = () => {
                     <h1>LITTLE LEMON RESTAURANT</h1>
                     <h5>Berlin</h5>
                     <p>The Little Lemon restaurant is a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-                    <button className="cta-button" href="menu.png">Menu</button>
+                    <button className="cta-button" href="/menu">Menu</button>
                 </div>
                 <div>
                     <div className='hero-col'>
