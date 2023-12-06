@@ -20,33 +20,22 @@ const TableReservationForm = ({ bookingFormData }) => {
 
   const onSubmit = async (values, { setSubmitting, resetForm, setStatus }) => {
     try {
-      const response = await fetch('https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log('Form submitted successfully:', data);
-        setStatus({ success: true, message: 'Form submitted successfully!' });
-        resetForm();
-      } else {
-        throw new Error('Form submission failed');
-      }
+      console.log('Form submitted successfully:', values);
+      setStatus({ success: true, message: 'Form submitted successfully!' });
+      setTimeout(() => {
+        setStatus({ success: false, message: 'Form submitted successfully!' });
+      }, 500);
+      resetForm();
     } catch (error) {
-        console.error('Form submission error:', error);
-        setStatus({ success: false, message: 'Form submission failed. Please try again later.' });
+      console.error('Form submission error:', error);
+      setStatus({ success: false, message: 'Form submission failed. Please try again later.' });
     } finally {
       setSubmitting(false);
     }
   };
 
-
   return (
-    <div>
+    <div className='reservation'>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -54,90 +43,94 @@ const TableReservationForm = ({ bookingFormData }) => {
       >
         {({ errors, touched, isSubmitting, status }) => (
           <Form aria-label="Table Reservation Form">
-            <h3>Table Reservation Form</h3>
-            <div>
-              <label htmlFor="name">Name:</label>
-              <Field type="text" id="name" name="name" aria-describedby="nameError" />
-              <ErrorMessage name="name" component="div" className="error" />
-            </div>
-
-            <div>
-              <label htmlFor="email">Email:</label>
-              <Field type="email" id="email" name="email" aria-describedby="emailError"/>
-              <ErrorMessage name="email" component="div" className="error" />
-            </div>
-
-            <div>
-              <label htmlFor="numOfGuests">Guests:</label>
-              <Field as="select" id="numOfGuests" name="numOfGuests" aria-label="Number of Guests">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </Field>
-            </div>
-
-            <div>
-              <label htmlFor="date">Date:</label>
-              <Field type="date" id="date" name="date" aria-describedby="dateError" />
-              <ErrorMessage name="date" component="div" className="error" />
-            </div>
-
-            <div>
-              <label htmlFor="time">Time:</label>
-              <Field as="select" id="time" name="time" aria-label="Reservation Time">
-                <option value="16">16:00</option>
-                <option value="16:30">16:30</option>
-                <option value="17">17:00</option>
-                <option value="17:30">17:30</option>
-                <option value="18">18:00</option>
-                <option value="18:30">18:30</option>
-                <option value="19">19:00</option>
-                <option value="19:30">19:30</option>
-                <option value="20">20:00</option>
-                <option value="20:30">20:30</option>
-                <option value="21">21:00</option>
-                <option value="21:30">21:30</option>
-                <option value="22">22:00</option>
-                <option value="22:30">22:30</option>
-                <option value="23">23:00</option>
-              </Field>
-            </div>
-
-            <div>
-              <label htmlFor="occasion">Occasion:</label>
-              <Field as="select" id="occasion" name="occasion" aria-label="Reservation Occasion">
-                <option value="Birthday">Birthday</option>
-                <option value="Anniversary">Anniversary</option>
-                <option value="Other">Other</option>
-              </Field>
-            </div>
-
-            {errors.submit && (
-              <div className="submit-error" aria-live="polite">
-                Submission failed. Please try again later.
+            <fieldset>
+              <h3>Table Reservation Form</h3>
+              <div className="Field">
+                <label htmlFor="name">Name <sup>*</sup></label>
+                <Field type="text" id="name" name="name" aria-describedby="nameError" />
+                <ErrorMessage name="name" component="div" className="error" />
               </div>
-            )}
 
-            {status && (
-              <div className={status.success ? 'success-message' : 'error-message'}>
-                {status.message}
+              <div className="Field">
+                <label htmlFor="email">Email <sup>*</sup></label>
+                <Field type="email" id="email" name="email" aria-describedby="emailError"/>
+                <ErrorMessage name="email" component="div" className="error" />
               </div>
-            )}
 
-            <button
-              className="submit-button"
-              type="submit"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 'Submitting...' : 'Submit'}
-            </button>
+              <div className="Field">
+                <label htmlFor="numOfGuests">Guests <sup>*</sup></label>
+                <Field as="select" id="numOfGuests" name="numOfGuests" aria-label="Number of Guests">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </Field>
+              </div>
+
+              <div className="Field">
+                <label htmlFor="date">Date <sup>*</sup></label>
+                <Field type="date" id="date" name="date" aria-describedby="dateError" />
+                <ErrorMessage name="date" component="div" className="error" />
+              </div>
+
+              <div className="Field">
+                <label htmlFor="time">Time <sup>*</sup></label>
+                <Field as="select" id="time" name="time" aria-label="Reservation Time">
+                  <option value="16">16:00</option>
+                  <option value="16:30">16:30</option>
+                  <option value="17">17:00</option>
+                  <option value="17:30">17:30</option>
+                  <option value="18">18:00</option>
+                  <option value="18:30">18:30</option>
+                  <option value="19">19:00</option>
+                  <option value="19:30">19:30</option>
+                  <option value="20">20:00</option>
+                  <option value="20:30">20:30</option>
+                  <option value="21">21:00</option>
+                  <option value="21:30">21:30</option>
+                  <option value="22">22:00</option>
+                  <option value="22:30">22:30</option>
+                  <option value="23">23:00</option>
+                </Field>
+              </div>
+
+              <div className="Field">
+                <label htmlFor="occasion">Occasion <sup>*</sup></label>
+                <Field as="select" id="occasion" name="occasion" aria-label="Reservation Occasion">
+                  <option value="Birthday">Birthday</option>
+                  <option value="Anniversary">Anniversary</option>
+                  <option value="Other">Other</option>
+                </Field>
+              </div>
+
+              <div className="Field">
+                {errors.submit && (
+                  <div className="submit-error" aria-live="polite">
+                    Submission failed. Please try again later.
+                  </div>
+                )}
+
+                {status && (
+                  <div className="success-message">
+                    Form submitted successfully!
+                  </div>
+                )}
+              </div>
+
+              <button
+                className="submit-button"
+                type="submit"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Submitting...' : 'Submit'}
+              </button>
+            </fieldset>
           </Form>
         )}
       </Formik>

@@ -285,11 +285,11 @@ button:hover {
 /*Reservation Form*/
 
 .reservation {
-    background-image: url('res-background.png');
+    background-image: url('hero-background.png');
     background-size: cover;
     background-color: #fff;
-    display: grid;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     padding: 20px 50px;
 }
 
@@ -297,13 +297,24 @@ button:hover {
     color: #ffffff;
 }
 
+fieldset {
+    display: flex;
+    max-width: 550px;
+    min-width: 300px;
+    padding: 16px;
+    border: none;
+    flex-direction: column;
+  }
+
 form {
-    background-color: #649e81;
+    background-color: #ee9972;
     color: #fff;
-    display: grid;
+    display: flex;
     justify-content: center;
     margin-top: 100px;
     margin-bottom: 20px;
+    max-width: 550px;
+    min-width: 300px;
     margin-left: 5%;
     margin-right: 5%;
     padding: 30px 50px;
@@ -312,8 +323,9 @@ form {
 }
 
 label {
-    padding-right: 10px;
+    margin-bottom: 5px;
     color: #495e57;
+    padding: 0;
 }
 
 input {
@@ -325,17 +337,35 @@ input {
     background-color: #ffffff3d;
 }
 
+sup {
+    color: rgb(214, 105, 105);
+    top: -2px;
+    font-size: 95%;
+    line-height: 0;
+    vertical-align: baseline;
+  }
+
+.Field {
+    position: relative;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
 .error {
+    position: absolute;
+    bottom: 10px;
     color: rgb(252, 36, 36);
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .success-message {
+    position: absolute;
     background-color: #dff0d8;
     color: #3c763d;
     border: 1px solid #d6e9c6;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-top: -20px;
   }
 
 .error-message {
